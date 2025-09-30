@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.body {
+  width: 1200px;
+  margin: 0 auto;
+  background: #222feb;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #ffffff;
+  border-right: 50px solid #d9e6f3;
+  border-left: 50px solid #d9e6f3;
+}
