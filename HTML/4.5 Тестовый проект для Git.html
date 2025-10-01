@@ -325,9 +325,109 @@
             сохранен и
             включен в ваш репозиторий.
         </p>
+        <p>В каком состоянии находится файл, если при проверке статуса нам выдало следующее:</p>
 
+        <div class="ramka">
+            <br>
+            Changes to be committed: <br>
+            new file: index.html <br>
+            <i>файл находится в состоянии staged (индексирован)</i>.<br>
+            <br>
+        </div>
 
+        <div class="ramka">
+            <br>
+            Changes to be committed: <br>
+            modified: index.html <br>
+            Modified — файл изменён, но правки ещё не сохранены. <br>
+        </div>
 
+        <div class="ramka">
+            <br>
+            Changes not staged for commit: <br>
+            modified: index.html <br>
+            Файл index.html в указанном состоянии находится в состоянии modified (изменён)
+            <br>
+            <br>
+        </div>
+
+        <div class="ramka">
+            <br>
+            nothing to commit, working tree clean <br>
+            это означает, что в рабочем каталоге нет изменений, которые нужно зафиксировать (сделать коммит) <br>
+            <br>
+
+        </div>
+
+        <h2>Короткая форма статуса в Git</h2>
+
+        <p>Сообщения о статусе файлов могут показаться немного многословными. Поэтому существует возможность вывести
+            статус в
+            короткой форме. В этой форме статус файлов будет показыватся соответствующей буквой перед именем файла:</p>
+
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>Статус</th>
+                <th>Описание</th>
+            </tr>
+            <tr>
+                <td>нет буквы</td>
+                <td>unmodified (неизмененный)</td>
+            </tr>
+            <tr>
+                <td>M</td>
+                <td>modified (модифицированный)</td>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>file type changed (изменен тип файла)</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>added (добавлен)</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>deleted (удаленный)</td>
+            </tr>
+            <tr>
+                <td>R</td>
+                <td>renamed (переименованный)</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>copied (скопированный)</td>
+            </tr>
+            <tr>
+                <td>U</td>
+                <td>updated but unmerge (обновленный, но не слившийся воедино)</td>
+            </tr>
+        </table>
+        <br>
+        <p>Для того, чтобы вывести статус в короткой форме нужно воспользоваться следующей командой:</p>
+
+        <div class="ramka">
+            <br>
+            git status -s <br>
+            <br>
+        </div>
+        <br>
+        <i>Посмотрите статус в короткой форме.</i><br>
+        <br>
+        <img src="../IMG/9.png" alt="9" width="1050">
+        <br>
+        <br>
+        <i>В каких состояниях находится файлы, если для них выдало:</i>
+        <br>
+
+        <div class="ramka">
+            <br>
+            A text1.txt <i>added (добавлен)</i><br>
+            text2.txt <i>unmodified (неизмененный)</i><br>
+            D text3.txt <i>deleted (удаленный)</i><br>
+            M text4.txt <i>modified (модифицированный)</i> <br>
+            <br>
+        </div>
 
 
 
