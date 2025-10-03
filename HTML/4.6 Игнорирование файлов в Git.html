@@ -50,7 +50,7 @@
         <h2 style="display: flex;  justify-content: center;">Пример 1</h2>
 
         <p>Косая черта перед именем файла соответствует файлу в корне репозитория:</p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             /debug.log <br>
             <br>
@@ -68,7 +68,7 @@
         ">
         <h2 style="display: flex;  justify-content: center;">Пример 2</h2>
         <p>Без косой черты в начале будут игнорироваться файлы и в подпапках:</p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             debug.log <br>
             <br>
@@ -83,7 +83,11 @@
         <br>
         <h2 style="display: flex;  justify-content: center;">Пример 3</h2>
         <p>Без косой черты в конце будут игноророваться и файлы без расширения, и папки с таким именем:</p>
-        <p> logs</p>
+        <div class="ramka">.gitignore <br>
+            <br>
+            logs <br>
+            <br>
+        </div>
         <p>Для примера будут проигнорированы следующие файлы:</p>
         <ul>
             <li>logs</li>
@@ -96,9 +100,11 @@
         <img src="../IMG/14.png" alt="14" width="1040px">
         <h2 style="display: flex;  justify-content: center;">Пример 4</h2>
         <p>С косой чертой в конце будут игнорироваться только папки:</p>
-        <ul>
-            <li>logs/</li>
-        </ul>
+        <div class="ramka">.gitignore <br>
+            <br>
+            logs/ <br>
+            <br>
+        </div>
         <p>Для примера будут проигнорированы следующие папки:</p>
         <ul>
             <li>logs/</li>
@@ -112,10 +118,11 @@
 
         <h2 style="display: flex;  justify-content: center;">Пример 5</h2>
         <p>Две звездочки в начале папки заставят игнорировать все папки содержащую такую подпапку в пути:</p>
-        <ul>
-            <li>**/logs</li>
-        </ul>
-
+        <div class="ramka">.gitignore <br>
+            <br>
+            **/logs <br>
+            <br>
+        </div>
         <p>Для примера будут проигнорированы следующие файлы:</p>
         <ul>
             <li>logs/debug.log</li>
@@ -128,9 +135,12 @@
 
         <p>Две звездочки можно также использовать для сопоставления файлов на основе их имени и имени родительской
             папки:</p>
-        <ul>
-            <li>**/logs/debug.log</li>
-        </ul>
+        <div class="ramka">.gitignore <br>
+            <br>
+            **/logs/debug.log <br>
+            <br>
+        </div>
+
         <p>Для примера будут проигнорированы следующие файлы:</p>
         <ul>
             <li>logs/debug.log</li>
@@ -138,16 +148,19 @@
         </ul>
         <p>Но не:</p>
         <ul>
-            <li>logs/build/debug.log</li>
+            <li>logs/monday/debug.log</li>
         </ul>
         <br>
         <img src="../IMG/17.png" alt="17" width="1040px">
         <h2 style="display: flex;  justify-content: center;">Пример 7</h2>
         <p>Одна звездочка — это подстановочный знак, который может соответствовать как нескольким символам, так и ни
             одному:</p>
-        <ul>
-            <li>*.log</li>
-        </ul>
+        <div class="ramka">.gitignore <br>
+            <br>
+            *.log<br>
+            <br>
+        </div>
+
         <p>Для примера будут проигнорированы следующие файлы:</p>
         <ul>
             <li>debug.log</li>
@@ -162,7 +175,7 @@
             шаблону,
             но при этом также соответствует отменяющему шаблону, указанному после, такой файл не будет игнорироваться:
         </p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             *.log <br>
             !important.log <br>
@@ -180,7 +193,7 @@
         <img src="../IMG/19.png" alt="19" width="1040px">
         <h2 style="display: flex;  justify-content: center;">Пример 9</h2>
         <p>Знак вопроса соответствует строго одному символу:</p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             debug?.log<br>
             <br>
@@ -200,9 +213,11 @@
         <img src="../IMG/20.png" alt="20" width="1040px">
         <h2 style="display: flex;  justify-content: center;">Пример 10</h2>
         <p>Квадратные скобки соответствуют одному символу из указанного набора:</p>
-        <ul>
-            <li>debug[01].log</li>
-        </ul>
+        <div class="ramka">.gitignore <br>
+            <br>
+            debug[01].log <br>
+            <br>
+        </div>
         <p>Для примера будут проигнорированы следующие файлы:</p>
         <ul>
             <li>debug0.log</li>
@@ -216,9 +231,10 @@
         <br>
         <img src="../IMG/21.png" alt="21" width="1040px">
         <h2 style="display: flex;  justify-content: center;">Пример 11</h2>
-        <p>Квадратные скобки можно также использовать для указания соответствия одному символу из заданного диапазона:
+        <p>Квадратные скобки можно также использовать для указания соответствия одному символу из заданного
+            диапазона:
         </p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             debug[0-9].log <br>
             <br>
@@ -227,14 +243,6 @@
         <ul>
             <li>debug0.log</li>
             <li>debug1.log</li>
-            <li>debug2.log</li>
-            <li>debug3.log</li>
-            <li>debug4.log</li>
-            <li>debug5.log</li>
-            <li>debug6.log</li>
-            <li>debug7.log</li>
-            <li>debug8.log</li>
-            <li>debug9.log</li>
         </ul>
         <p>Но не:</p>
         <ul>
@@ -246,7 +254,7 @@
         <h2>Пример 12</h2>
         <p>Восклицательный знак можно использовать для указания соответствия любому символу, кроме символов из
             указанного набора:</p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             debug[!01].log <br>
             <br>
@@ -265,7 +273,7 @@
         <img src="../IMG/23.png" alt="23" width="1040px">
         <h2 style="display: flex;  justify-content: center;">Пример 13</h2>
         <p>Диапазоны могут быть цифровыми или буквенными:</p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             debug[a-z].log <br>
             <br>
@@ -284,7 +292,7 @@
         <h2 style="display: flex;  justify-content: center;">Пример 14</h2>
 
         <p>Две звездочки соответствуют множеству каталогов или ни одному:</p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             logs/**/debug.log <br>
             <br>
@@ -299,7 +307,7 @@
         <img src="../IMG/25.png" alt="25" width="1040px">
         <h2 style="display: flex;  justify-content: center;">Пример 15</h2>
         <p>Подстановочные символы можно использовать и в именах каталогов:</p>
-        <div class="ramka">
+        <div class="ramka">.gitignore <br>
             <br>
             logs/*day/debug.log <br>
             <br>
