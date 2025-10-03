@@ -1,1 +1,2 @@
-logs/*day/debug.log
+err.txt
+tmp/
