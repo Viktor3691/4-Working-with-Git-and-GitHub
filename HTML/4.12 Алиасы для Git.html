@@ -33,6 +33,48 @@
 
         <h1>4.12 Алиасы для Git</h1>
 
+        <p>В этом видео уроке по системе Git я расскажу что такое алиасы, зачем нужны алиасы в Git и как создавать свои
+            собственные
+            команды или Алиасы для работы с Git. <strong>Алиасы в Git</strong> - это пользовательские сокращенные
+            команды, которые позволяют
+            выполнять стандартные команды Git, но использовать при этом выбранные нами сокращения.</p>
+
+        <h2>Файл .gitconfig</h2>
+        <div class="ramka">.gitconfig <br>
+            <br>
+
+            [filter "lfs"]<br>
+            smudge = git-lfs smudge -- %f<br>
+            process = git-lfs filter-process<br>
+            required = true<br>
+            clean = git-lfs clean -- %f<br>
+            [user]<br>
+            name = Viktor3691<br>
+            email = 159269503+Viktor3691@users.noreply.github.com<br>
+            <br>
+            [filter "lfs"]<br>
+            clean = git-lfs clean -- %f<br>
+            smudge = git-lfs smudge -- %f<br>
+            process = git-lfs filter-process<br>
+            required = true<br>
+            [alias]<br>
+            s = status --short<br>
+            l = log --oneline --graph --decorate --all<br>
+            g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold<br>
+            cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n<br>
+            %C(white)%s%C(reset)'<br>
+            br = branch<br>
+            co = checkout<br>
+            [color]<br>
+            ui = auto<br>
+            [core]<br>
+            editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin<br>
+            [init]<br>
+            defaultBranch = main<br>
+        </div>
+        <br>
+
+
 
     </div>
 
