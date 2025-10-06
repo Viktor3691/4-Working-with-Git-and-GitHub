@@ -33,11 +33,155 @@
 
         <h1>4.12 Алиасы для Git</h1>
 
-        <p>В этом видео уроке по системе Git я расскажу что такое алиасы, зачем нужны алиасы в Git и как создавать свои
-            собственные
-            команды или Алиасы для работы с Git. <strong>Алиасы в Git</strong> - это пользовательские сокращенные
-            команды, которые позволяют
-            выполнять стандартные команды Git, но использовать при этом выбранные нами сокращения.</p>
+        <h2>Как создавать и использовать псевдонимы git для ускорения рабочего процесса</h2>
+
+        <p>Многократный ввод полных команд Git может замедлить вашу работу, особенно при частых операциях, таких как
+            проверка
+            статуса, фиксация изменений или переключение между ветками. Что если бы вы могли выполнять эти
+            распространенные задачи
+            всего двумя или тремя нажатиями клавиш? Именно здесь пригодятся псевдонимы Git. <br>
+            <br>
+        </p>
+        <div class="ramka">
+            <p><strong>Ключевые моменты</strong></p>
+            <ul>
+                <li>Псевдонимы Git сокращают распространенные команды для ускорения рабочего процесса</li>
+                <li>Настройка псевдонимов экономит время и уменьшает повторяющийся ввод</li>
+                <li>Вы можете настроить псевдонимы под свой рабочий процесс с помощью простого редактирования
+                    конфигурации</li>
+                <br>
+            </ul>
+        </div>
+
+        <h2>Что такое псевдонимы Git?</h2>
+
+        <p>Псевдонимы Git — это пользовательские сокращения для более длинных команд Git. Вместо того чтобы каждый раз
+            вводить <span>git status</span> для проверки рабочего каталога, вы можете создать сокращение, например,
+            <span>gs.</span>
+            Это небольшое изменение экономит время и уменьшает трение, особенно при ежедневном управлении множеством
+            репозиториев.<br>
+            <br>
+            Псевдонимы Git настраиваются либо путем прямого редактирования файла <span>.gitconfig,</span> либо с помощью
+            команды
+            <span>git config.</span>
+        </p>
+
+        <h2>Как создать псевдонимы Git</h2>
+
+        <p>Вы можете создавать псевдонимы вручную, редактируя файл конфигурации Git, расположенный в
+            <span>~/.gitconfig</span> в
+            разделе <span> [alias].</span>
+        </p>
+        <p>Пример:</p>
+
+        <div class="ramka">
+            [alias]<br>
+            <br>
+            st = status<br>
+            co = checkout<br>
+            br = branch<br>
+            cm = commit<br>
+            pl = pull<br>
+            ps = push<br>
+            <br>
+        </div>
+        <p>Альтернативно, вы можете добавить их через команды терминала:</p>
+
+        <div class="ramka">
+            git config --global alias.st status<br>
+            git config --global alias.co checkout<br>
+            git config --global alias.br branch<br>
+            git config --global alias.cm commit<br>
+            git config --global alias.pl pull<br>
+            git config --global alias.ps push<br>
+            <br>
+        </div>
+        <p>Флаг <span>--global</span> применяет эти псевдонимы для вашего пользователя во всех репозиториях. Если вы
+            опустите
+            <span>--global, </span> псевдоним будет установлен только для текущего проекта.
+        </p>
+
+        <h2>Самые полезные псевдонимы Git для ускорения рабочего процесса</h2>
+
+        <p>Вот практический набор псевдонимов Git, вдохновленный реальным использованием:</p>
+
+        <table class="tab">
+            <th>Псевдоним</th>
+            <th>Полная команда</th>
+            <th>Назначение</th>
+
+            <tr>
+                <td>gs</td>
+                <td>git status -s</td>
+                <td>Проверка статуса репозитория в кратком формате</td>
+            </tr>
+
+            <tr>
+                <td>gd</td>
+                <td>git diff</td>
+                <td>Просмотр несохраненных изменений</td>
+            </tr>
+
+            <tr>
+                <td>gds</td>
+                <td>git diff —staged</td>
+                <td>Просмотр подготовленных изменений</td>
+            </tr>
+
+            <tr>
+                <td>ga</td>
+                <td>git add</td>
+                <td>Подготовка изменений</td>
+            </tr>
+
+            <tr>
+                <td>gcm</td>
+                <td>git commit -m</td>
+                <td>Фиксация с сообщением</td>
+            </tr>
+
+            <tr>
+                <td>gca</td>
+                <td>git commit —amend</td>
+                <td>Изменение последней фиксации</td>
+            </tr>
+
+            <tr>
+                <td>gp</td>
+                <td>git push</td>
+                <td>Отправка в удаленный репозиторий</td>
+            </tr>
+
+            <tr>
+                <td>gpl</td>
+                <td>git pull —rebase</td>
+                <td>Получение и перебазирование локальных изменений</td>
+            </tr>
+
+            <tr>
+                <td>gl</td>
+                <td>git log —oneline —graph —decorate</td>
+                <td>Компактный просмотр истории коммитов</td>
+            </tr>
+
+            <tr>
+                <td>gco</td>
+                <td>git checkout</td>
+                <td>Переключение веток</td>
+            </tr>
+
+            <tr>
+                <td>gcl</td>
+                <td>git clone</td>
+                <td>Клонирование репозитория</td>
+            </tr>
+
+        </table>
+
+        <p>Вы можете адаптировать этот список в зависимости от команд, которые используете чаще всего.</p>
+
+
+
 
         <h2>Файл .gitconfig</h2>
         <div class="ramka">.gitconfig <br>
@@ -48,10 +192,9 @@
             process = git-lfs filter-process<br>
             required = true<br>
             clean = git-lfs clean -- %f<br>
-            [user]<br>
-            name = login <br><!-- name = Viktor3691<br> -->
-            email = email@mail.ru <br> <!-- email = 159269503+Viktor3691@users.noreply.github.com<br>
- -->
+            <!-- [user]
+        name = Viktor3691
+        email = 159269503+Viktor3691@users.noreply.github.com -->
             <br>
             [filter "lfs"]<br>
             clean = git-lfs clean -- %f<br>
@@ -61,11 +204,15 @@
             [alias]<br>
             s = status --short<br>
             l = log --oneline --graph --decorate --all<br>
-            g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold<br>
-            cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n<br>
-            %C(white)%s%C(reset)'<br>
+            g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold
+            cyan)%aD%C(dim
+            white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'<br>
             br = branch<br>
             co = checkout<br>
+            st = status<br>
+            cm = commit<br>
+            pl = pull<br>
+            ps = push<br>
             [color]<br>
             ui = auto<br>
             [core]<br>
