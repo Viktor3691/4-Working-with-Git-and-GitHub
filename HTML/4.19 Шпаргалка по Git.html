@@ -33,6 +33,199 @@
 
         <h1>4.19 Шпаргалка по Git:</h1>
 
+        <h2>Основные команды для работы⁠⁠</h2>
+
+        <p>Git — это система контроля версий, которая помогает разработчикам эффективно управлять изменениями в коде.
+            Если вы
+            только начинаете работать с Git или часто забываете команды, эта шпаргалка станет вашим надежным помощником!
+        </p>
+        <ol>
+            <li>
+                <p><strong>Настройка Git</strong></p>
+                <p>Перед началом работы нужно представиться системе:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git init <br>
+                    git add . <br>
+                    git commit -m "First commit"
+                </div>
+                <p>Проверить настройки можно так:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git config --list
+                </div>
+            </li>
+
+            <li>
+                <p><strong>Создание и клонирование репозитория</strong></p>
+                <p>Создать новый локальный репозиторий:</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git init <br>
+                </div>
+                <p>Клонировать существующий репозиторий:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git clone https://github.com/username/repository.git
+                </div>
+            </li>
+
+            <li>
+                <p><strong>Основные команды для работы с изменениями</strong></p>
+                <p>Проверить статус файлов:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git status
+                </div>
+                <p>Добавить файлы в индекс (подготовить к коммиту):</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git add имя_файла # Добавить конкретный файл <br>
+                    git add . # Добавить все измененные файлы
+                </div>
+                <p>Создать коммит (фиксация изменений):</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git commit -m "Описание изменений"
+                </div>
+                <p>Отправить изменения в удаленный репозиторий:</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git push origin имя_ветки # Например, git push origin main
+                </div>
+                <p>Получить изменения с удаленного репозитория:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git pull origin имя_ветки # Например, git pull origin main
+                </div>
+            </li>
+
+            <li>
+                <p><strong>Ветки (Branches)</strong></p>
+                <p>Создать новую ветку:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git branch имя_ветки
+                </div>
+                <p>Переключиться на ветку:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git checkout имя_ветки
+                </div>
+                <p>или</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git switch имя_ветки # (более новая команда)
+                </div>
+                <p>Создать ветку и сразу перейти в нее:</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git checkout -b имя_ветки
+                </div>
+                <p>Удалить ветку:</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git branch -d имя_ветки # Локально <br>
+                    git push origin --delete имя_ветки # Удаленно
+                </div>
+
+            </li>
+
+            <li>
+                <p><strong>Отмена изменений</strong></p>
+                <p>Отменить изменения в файле (до добавления в индекс):</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git restore имя_файла
+                </div>
+                <p>Отменить добавление файла в индекс:</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git restore --staged имя_файла
+                </div>
+                <p>Изменить последний коммит (если не залит в удаленный репозиторий):</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git commit --amend -m "Новое описание"
+                </div>
+
+
+            </li>
+
+            <li>
+                <p><strong>Работа с удаленными репозиториями</strong></p>
+                <p>Просмотр списка удаленных репозиториев:</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git remote -v
+                </div>
+                <p>Добавить удаленный репозиторий:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git remote add origin ссылка_на_репозиторий
+                </div>
+                <p>Обновить список веток с удаленного репозитория:</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git fetch
+                </div>
+            </li>
+
+            <li>
+                <p><strong>Полезные команды</strong></p>
+                <p>Просмотр истории коммитов:</p>
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git log
+                </div>
+
+                <p>Просмотр изменений в файлах:</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git diff
+                </div>
+                <p>Временное сохранение изменений (stash):</p>
+
+                <div class="ramka">ТЕРМИНАЛ <br>
+                    <br>
+                    git stash # Сохранить изменения <br>
+                    git stash pop # Вернуть изменения<br>
+                    git stash list # Просмотр списка<br>
+                    git stash clear # Удалить все<br>
+                    git stash drop # Удалить последнее<br>
+                    git stash apply # Применить последнее<br>
+                    git stash show # Просмотр последнего<br>
+                    git stash branch # Создать новую ветку из последнего stash<br>
+                    git stash branch имя_ветки # Создать новую ветку из последнего stash<br>
+                    git stash branch имя_ветки --include-untracked # Создать новую ветку из последнего stash с
+                    включением неотслеживаемых файлов<br>
+                    git stash branch имя_ветки --include-untracked --keep-index # Создать новую ветку из последнего
+                    stash с включением неотслеживаемых файлов и сохранением индекса<br>
+                    git stash branch имя_ветки --keep-index # Создать новую ветку из последнего stash с сохранением
+                    индекса<br>
+                </div>
+                <p><strong><span>Эта шпаргалка покрывает основные команды Git, которые понадобятся в повседневной
+                            работе. Сохраните ее себе, чтобы быстро
+                            вспомнить нужную команду!</span></strong></p>
+
+
+
+
+            </li>
+        </ol>
+
 
 
     </div>
